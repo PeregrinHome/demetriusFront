@@ -1,6 +1,11 @@
 .text-Light{
   font-weight: 300;
 }
+.container-primary{
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .header__aria-animation{
   position: absolute;
   width: 100%;
@@ -1093,4 +1098,3 @@ a{
 .btn-with-icon{
   padding-right: 1rem;
 }
-

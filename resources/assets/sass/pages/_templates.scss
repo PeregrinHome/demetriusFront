@@ -861,3 +861,88 @@ select.form-control {
   width: 100%;
   z-index: 2;
 }
+
+.t{
+  &__input, &__select{
+    padding-left: 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #212529;
+    border-radius: 0;
+    &::-webkit-input-placeholder {color:#212529;}
+    &::-moz-placeholder          {color:#212529;}/* Firefox 19+ */
+    &:-moz-placeholder           {color:#212529;}/* Firefox 18- */
+    &:-ms-input-placeholder      {color:#212529;}
+    outline: none!important;
+    box-shadow: none!important;
+  }
+  &__select{
+    background-position: 99% 50%!important;
+    padding-right: 1rem;
+  }
+  &__link-border{
+    position: relative;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    cursor: pointer;
+    user-select: none;
+    &:after{
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 0%;
+      bottom: 0;
+      left: 0;
+      background: #cc0000;
+      transition: all .2s ease-in;
+    }
+    &.active{
+      &:after{
+        width: 100%;
+        transition: all .2s ease-in;
+      }
+    }
+    &:hover{
+      &:after{
+        background: #f55151;
+        transition: all .2s ease-in;
+      }
+    }
+  }
+  &__link-left,&__link-right{
+    width: 1.5rem;
+    height: 3rem;
+    opacity: 0;
+    transition: opacity .2s ease-in;
+    &.active{
+      opacity: 1;
+      cursor: pointer;
+      transition: opacity .2s ease-in;
+    }
+  }
+  &__link-left{
+    background-image: url(/images/lending/arrow-left.svg);
+  }
+  &__link-right{
+    background-image: url(/images/lending/arrow-right.svg);
+  }
+}
+.btn-primary--gradient-lite{
+  border-radius: .1rem;
+  font-weight: 300!important;
+  color: white;
+  width: 100%;
+  border: none;
+  background: #cc0000;
+  -webkit-box-shadow: inset 0px -20px 35px -10px rgba(255,255,255,0.31);
+  -moz-box-shadow: inset 0px -20px 35px -10px rgba(255,255,255,0.31);
+  box-shadow: inset 0px -20px 35px -10px rgba(255,255,255,0.31);
+  transition: all .3s ease-in;
+  &:hover{
+    -webkit-box-shadow: inset 0px -20px 35px -10px rgba(255,255,255,0);
+    -moz-box-shadow: inset 0px -20px 35px -10px rgba(255,255,255,0);
+    box-shadow: inset 0px -20px 35px -10px rgba(255,255,255,0);
+    transition: all .3s ease-in;
+  }
+}
