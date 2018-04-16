@@ -927,6 +927,30 @@ select.form-control {
   &__link-right{
     background-image: url(/images/lending/arrow-right.svg);
   }
+  &__box-line-left-fix{
+    margin-left: -3rem;
+    
+  }
+  &__box-line-left{
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8%;
+      width: 4px;
+      height: 85%;
+      background: #cc0000;
+    }
+  }
+  &__big-number{
+    font-size: 3rem;
+    line-height: 1;
+    padding-right: .5rem;
+  }
+  &__text-red{
+   color: #cc0000;
+  }
 }
 .btn-primary--gradient-lite{
   border-radius: .1rem;
