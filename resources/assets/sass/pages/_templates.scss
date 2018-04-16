@@ -861,8 +861,43 @@ select.form-control {
   width: 100%;
   z-index: 2;
 }
-
+.landing-border-radius{
+  border-radius: 1rem;
+}
+.landing__danger{
+  &--label{
+    border: 1px solid #cc0000;
+    color: #cc0000;
+    background: white;
+    border-radius: .2rem;
+    @media (min-width: 768px) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+  &--btn{
+    border-radius: .2rem;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    @media (min-width: 768px) {
+      font-weight: 400!important;
+      font-size: .9rem;
+    }
+  }
+}
 .t{
+  &__btn-white{
+    background: white;
+    border: 1px solid #cc0000;
+    border-radius: .2rem;
+    color: #cc0000;
+    font-weight: 400!important;
+    padding: 0.7rem 2.3rem!important;
+    transition: all .3s ease-in;
+    &:hover{
+      background: #ffe6da;
+    }
+  }
   &__input, &__select{
     padding-left: 1px;
     border-top: none;
@@ -927,10 +962,6 @@ select.form-control {
   &__link-right{
     background-image: url(/images/lending/arrow-right.svg);
   }
-  &__box-line-left-fix{
-    margin-left: -3rem;
-    
-  }
   &__box-line-left{
     position: relative;
     &:before{
@@ -951,9 +982,17 @@ select.form-control {
   &__text-red{
    color: #cc0000;
   }
+  &__box-overflow-landing{
+    @media (min-width: 768px) {
+      height: 40vw;
+    }
+    @media (min-width: 1440px) {
+      height: 34rem;
+    }
+  }
 }
 .btn-primary--gradient-lite{
-  border-radius: .1rem;
+  border-radius: .2rem;
   font-weight: 300!important;
   color: white;
   width: 100%;
