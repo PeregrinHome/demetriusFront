@@ -1,0 +1,13 @@
+.template__orientation-backward-in {
+    background: black;
+}
+
+.section__footer-socials {
+    color: white;
+
+}
+.footer-socials-link {
+    color:white;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+}

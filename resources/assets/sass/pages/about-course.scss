@@ -1,0 +1,106 @@
+.about-course{
+  &__baner{
+    &__content{
+      &__title{
+        padding-top: 9rem;
+        padding-bottom: 8rem;
+        position: relative;
+        z-index: 2;
+      }
+      &__img{
+        position: absolute;
+        bottom: 0rem;
+        right: 0rem;
+        z-index: 1;
+        height: 100%;
+        img{
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+  &__action{
+    &--3{
+      &__item{
+        &__img{
+          img{
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+  &__link-span{
+    text-decoration: none!important;
+    span{
+      color: #000;
+      &.border-bottom-dashed{
+        text-decoration: none!important;
+      }
+    }
+    &:hover{
+      text-decoration: none!important;
+      span{
+        color: #cc0000;
+        &.border-bottom-dashed{
+          text-decoration: none!important;
+        }
+      }
+    }
+  }
+  &__advantage{
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    &__item{
+      &__img{
+        width: calc(100vw/3);
+        height: calc(100vw/3 * 0.7);
+        position: relative;
+        @media screen and (max-width: 768px){
+          width: calc(100vw/2);
+          height: calc(100vw/2 * 0.7);
+        }
+        @media screen and (max-width: 576px){
+          width: calc(100vw/1);
+          height: calc(100vw/1 * 0.7);
+        }
+        &__text{
+          position: relative;
+          //bottom: -2rem;
+          //left: 0rem;
+          padding: 1rem 1rem;
+          width: 100%;
+          text-align: center;
+          z-index: 10;
+          p{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  &__action--4{
+    &__img{
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+.about-course__advantage--owl-carousel{
+  .owl-stage-outer{
+    &:before{
+      content: "";
+      position: absolute;
+      z-index: 2;
+      bottom: 6.7rem;
+      left: -5rem;
+      width: 0;
+      height: 0;
+      border-bottom: 1rem solid white;
+      border-left: calc(100vw + 10rem) solid transparent;
+    }
+  }
+}

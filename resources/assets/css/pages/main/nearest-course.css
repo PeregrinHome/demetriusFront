@@ -1,0 +1,31 @@
+.nearest-course-h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    line-height: 3rem;
+}
+
+.section__nearest-course {
+    margin-top:-10rem;
+    padding-bottom: 5rem;
+}
+
+.nearest-course-h2__cource-name {
+    text-decoration: underline;
+}
+
+.nearest-course__header-out {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.nearest-course__header-in {
+    position: relative;;
+    width: 200%;
+    height: 5rem;
+    top: 1.5rem;
+    margin-left: -50%;
+    background: white;
+    transform: rotate(-2deg);
+}

@@ -1,0 +1,17 @@
+.howToGet{
+    &__image{
+      width: 100%;
+      height: auto;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  &__modal-content{
+    max-height: 700px;
+    overflow-y: auto;
+    @media screen and (max-width: 768px) {
+      max-height: 500px;
+    }
+  }
+}

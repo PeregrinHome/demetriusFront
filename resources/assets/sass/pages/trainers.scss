@@ -1,0 +1,281 @@
+.trainer{
+  &__baner{
+    position: relative;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    &__content{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      &__title{
+        padding-top: 12rem;
+        padding-bottom: 10rem;
+        position: relative;
+        z-index: 2;
+      }
+      &__img{
+        position: absolute;
+        bottom: 0rem;
+        right: -1rem;
+        z-index: 1;
+        height: 100%;
+        img{
+          height: 100%;
+          width: auto;
+        }
+      }
+
+    }
+    &__nav{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 3.2rem;
+      z-index: 5;
+      &--left{
+        top: 0;
+        left: 0;
+        padding-left: 1rem;
+        &__arrow{
+          height: 3.685rem;
+          width: 2.2rem;
+          background-image: url("/images/pages/trainers/arrow_up.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          transform: rotate(180deg);
+          opacity: .2;
+          transition: .2s;
+          &:hover, &:focus{
+            opacity: 1;
+          }
+        }
+      }
+      &--right{
+        top: 0;
+        right: 0;
+        padding-right: 1rem;
+        &__arrow{
+          height: 67px;
+          width: 40px;
+          background-image: url("/images/pages/trainers/arrow_up.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          opacity: .2;
+          transition: .2s;
+          &:hover, &:focus{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__first-events{
+    margin-top: -2rem;
+    position: relative;
+    z-index: 2;
+    @media screen and (min-width: 2000px) {
+      margin-top: -3rem;
+    }
+    &--owl-carousel{
+      .owl-stage{
+        //display: flex;
+        .owl-item:nth-child(1){
+          .trainer__first-events__row__item{
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    &__item{
+      height: 4rem;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    &__container{
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__row{
+      display: flex;
+      flex-wrap: wrap;
+      &__item{
+        display: flex;
+        //padding-bottom: 3rem;
+        padding-left: 2rem;
+        height: 100%;
+        &__line{
+          width: 4px;
+          height: calc(100% - .2rem);
+          margin-top: 0.2rem;
+        }
+        &__text{
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+  &__body{
+    position: relative;
+    z-index: 3;
+    margin-top: -7rem;
+    &__container{
+      display: block;
+      width: 100%;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__row{
+      display: flex;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+    &__col{
+      width: 50%;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+      &--left{
+        &-text{
+          padding-right: 1rem;
+          //@media screen and (min-width: 576px) {
+          //  margin-left: calc(100% - 270px);
+          //}
+          @media screen and (min-width: 769px) {
+            margin-left: calc(100% - 360px + 15px);
+          }
+          @media screen and (min-width: 992px) {
+            margin-left: calc(100% - 480px + 15px);
+          }
+          @media screen and (min-width: 1200px) {
+            margin-left: calc(100% - 570px + 15px);
+          }
+        }
+        &-sidebar{
+          padding-right: 1rem;
+          @media screen and (max-width: 769px) {
+            padding-right: 0;
+          }
+          &__box{
+            padding-bottom: 2rem;
+          }
+          &__row{
+            display: flex;
+          }
+          &__col{
+            width: 50%;
+            @media screen and (max-width: 768px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+      &--right{
+        &-text{
+          padding-left: 1rem;
+          //@media screen and (min-width: 576px) {
+          //  margin-right: calc(100% - 270px);
+          //}
+          @media screen and (min-width: 769px) {
+            margin-right: calc(100% - 360px + 15px);
+          }
+          @media screen and (min-width: 992px) {
+            margin-right: calc(100% - 480px + 15px);
+          }
+          @media screen and (min-width: 1200px) {
+            margin-right: calc(100% - 570px + 15px);
+          }
+        }
+        &-sidebar{
+          padding-left: 1rem;
+          @media screen and (max-width: 769px) {
+            padding-left: 0;
+          }
+          &__box{
+
+          }
+          &__row{
+            display: flex;
+          }
+          &__col{
+            width: 50%;
+            @media screen and (max-width: 768px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__portfolio{
+    padding-bottom: 2rem;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    &__item{
+      height: 20rem;
+      &--img{
+        height: 100%;
+        width: auto!important;
+      }
+    }
+    &__box{
+      padding-left: 15px;
+      @media screen and (min-width: 769px) {
+        padding-left: calc((100% - 720px + 30px)/2);
+      }
+      @media screen and (min-width: 992px) {
+        padding-left: calc((100% - 960px + 30px)/2);
+      }
+      @media screen and (min-width: 1200px) {
+        padding-left: calc((100% - 1140px + 30px)/2);
+      }
+
+    }
+  }
+  &__courses{
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    &--owl-carousel{
+      .owl-stage{
+        //display: flex;
+        .owl-item:nth-child(1){
+          .trainer__first-events__row__item{
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    &__item{
+      height: 3rem;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+}
+.trainer__portfolio__item:nth-child(1){
+  .trainer__first-events__row__item{
+    padding-left: 0;
+  }
+}
+
+.max-width-none-md{
+  @media screen and (max-width: 769px) {
+    max-width: none;
+  }
+}

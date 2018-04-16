@@ -1,0 +1,27 @@
+.section__enrollment-background {
+    background: #cc0000;
+    background: -moz-linear-gradient(-45deg, rgba(153,17,0,1) 0%, #cc0000 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(153,17,0,1) 0%,#cc0000 100%);
+    background: linear-gradient(135deg, rgba(153,17,0,1) 0%,#cc0000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#991100', endColorstr='#cc0000',GradientType=1 );
+}
+
+.enrollment__call-me {
+    padding-top: 2.9rem;
+    padding-bottom: 2rem;
+}
+
+.enrollment__text {
+    font-style: italic;
+    padding-top: 2.5rem;
+    padding-left: 1rem;
+}
+
+
+.enrollment-wrapper {
+    padding-top: 2rem;
+}
+
+.enroll__block {
+    padding-left: 1rem;
+}

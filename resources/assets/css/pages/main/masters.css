@@ -1,0 +1,199 @@
+.section__masters {
+    /*background: url('/images/template/bg/black_background_main.svg') top -6.7rem center no-repeat;*/
+    padding-top: 5rem;
+    padding-bottom: 12rem;
+    margin-top: -12rem;
+    background-size: cover;
+}
+
+.masters__block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section__masters-h2 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: .1rem;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    text-shadow: 0 9rem 0.2rem rgba(50, 50, 50, .19);
+    height: 13rem;
+}
+
+.masters__man {
+    background-image: url('/images/pages/main/main-photo-dmitry.png');
+    /*background-repeat: no-repeat;*/
+    /*background-size: 479px 473px;*/
+    /*width: 479px;*/
+    /*height:473px;*/
+    /*top:.6rem;*/
+    /*left:-5rem;*/
+    position: relative;
+    transform: rotate(1deg);
+    bottom: -0.6rem;
+    width: 100%;
+    height: 20rem;
+}
+
+.masters__girl {
+    background-image: url('/images/pages/main/main-photo-model-3.png');
+    /*background-repeat: no-repeat;*/
+    /*background-size: 479px 303px;*/
+    /*background-position: center center;*/
+    /*width: 479px;*/
+    /*height: 303px;*/
+    /*top: 9.80rem;*/
+    /*left:0;*/
+    position: relative;
+    bottom: -.1rem;
+    width: 100%;
+    height: 20rem;
+}
+
+.masters__girl-2{
+    background-image: url('/images/pages/main/main-photo-model-4.png');
+    /*background-repeat: no-repeat;*/
+    /*background-size: 302px 449px;*/
+    /*background-position: center center;*/
+    /*width: 302px;*/
+    /*height: 449px;*/
+    /*top: 4.78rem;*/
+    /*left:0;*/
+    position: relative;
+    bottom: .4rem;
+    width: 100%;
+    transform: rotate(-1deg);
+    height: 20rem;
+}
+
+
+.masters__lightning-img {
+    position: absolute;
+    /*top:.3rem;*/
+    top: -3000px;
+    height: 32rem;
+    width: 18rem;
+    left: calc(50% - 9rem);
+    /*transform: translateY(-3000px);*/
+    /*transition: transform .5s ease-in;*/
+    transition: top .3s ease-in;
+    /*position: relative;*/
+    /*top:.3rem;*/
+    /*transform: rotate(1.5deg);*/
+    /*height: 50rem;*/
+}
+
+.section__masters-text {
+    color: white;
+    position: absolute;
+    /*top:.3rem;*/
+    top: -3000px;
+    height: 28rem;
+    width: 18rem;
+    left: calc(50% - 9rem);
+    font-size: 1.1rem;
+    padding: 7rem 2rem 1rem 3rem;
+    /*transform: translateY(-3000px);*/
+    /*transition: transform 0s ease-in;*/
+    transition: top .4s ease-in;
+}
+
+.masters__after-out {
+    width: 100%;
+    height: 10rem;
+    margin-top: -9.5rem;
+    overflow: hidden;
+}
+
+.masters__after-in {
+    position: relative;
+    top:0;
+    left: -10rem;
+    width: 500%;
+    transform: rotate(-2deg);
+    background: white;
+    height: 4rem;
+}
+
+.masters__out {
+    transform: rotate(2deg);
+    position: relative;
+    padding-bottom: 5%;
+}
+
+.masters__in {
+    position: relative;
+    transform: rotate(-3deg);
+    width: 120%;
+    left:-10%;
+}
+
+.masters__content {
+    position: relative;
+    transform: rotate(1deg);
+}
+
+.masters__block-lightning:hover .masters__lightning-img, .masters__block-lightning:focus .masters__lightning-img, .masters__block-lightning:hover .section__masters-text, .masters__block-lightning:focus .section__masters-text{
+    /*transform: translateY(0px);*/
+    /*transition: transform .3s ease-in;*/
+    top: 0px;
+    transition: top .3s ease-in;
+}
+
+.masters__block-lightning.active .masters__lightning-img, .masters__block-lightning.active .masters__lightning-img, .masters__block-lightning.active .section__masters-text, .masters__block-lightning.active .section__masters-text{
+    /*transform: translateY(0px);*/
+    /*transition: transform .3s ease-in;*/
+    top: 0px;
+    transition: top .3s ease-in;
+}
+
+@media (max-width: 1200px) {
+    .masters__man:after {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: .10rem;
+        background: gray;
+        bottom: .4rem;
+        left: 5%;
+        transform: rotate(-2deg);
+    }
+    .masters__girl {
+        width: 100%;
+        background-position: center center;
+    }
+    .masters__girl:after {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: .10rem;
+        background: gray;
+        bottom: 0.25rem;
+        left: 5%;
+        transform: rotate(-1deg);
+    }
+    .masters__girl-2 {
+        width: 100%;
+        background-position: center center;
+        top: 0rem;
+    }
+    .masters__girl-2:after {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: .10rem;
+        background: gray;
+        bottom: 0rem;
+        left: 5%;
+    }
+
+    /*.masters__lightning-img {*/
+        /*!*top:-0.8rem;*!*/
+        /*!*transform: rotate(-1deg) translateY(-2000px);*!*/
+    /*}*/
+}

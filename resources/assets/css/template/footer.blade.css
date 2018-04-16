@@ -1,0 +1,18 @@
+.footer__link {
+    color:black;
+    text-decoration: underline;
+}
+.footer__batyukovstudio-copyright {
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+}
+.section__footer {
+    margin-top: -4rem;
+    overflow: hidden;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    background: url('/images/pages/main/footer/background.svg') center center no-repeat;
+    background-size: cover;
+
+}

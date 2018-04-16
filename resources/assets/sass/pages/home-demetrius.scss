@@ -1,0 +1,60 @@
+.home-demetrius{
+  width: 100%;
+  position: relative;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  &__contact{
+    &--left{
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      &__text{
+        @media screen and (max-width: 576px) {
+          padding-left: 2rem;
+        }
+      }
+    }
+    &--right{
+      &__text{
+        @media screen and (max-width: 576px) {
+          padding-left: 2rem;
+        }
+      }
+    }
+  }
+  &__block{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &--horizontal{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__text{
+      display: flex;
+      flex-direction: column;
+    }
+    &__img{
+      &--horizontal{
+        display: flex;
+        flex-wrap: wrap;
+        &__img{
+          width: (100%/3 * 1);
+        }
+      }
+      &--vertical{
+        display: flex;
+        flex-direction: column;
+        @media screen and (max-width: 992px) {
+          flex-direction: row;
+        }
+        &__img{
+          @media screen and (max-width: 992px) {
+            width: (100%/3 * 1);
+          }
+        }
+      }
+    }
+  }
+}

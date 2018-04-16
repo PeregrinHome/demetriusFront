@@ -1,0 +1,24 @@
+
+
+.section__sign-up-as-model-background {
+    background: black;
+}
+
+.education__hear {
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+}
+
+.section__sign-up-as__text {
+    font-style: italic;
+    padding-top: 1.5rem;
+}
+
+.section_sign-up-as__wrapper {
+    padding-top: 2rem;
+}
+
+.section_sign-up-as__call-me {
+    padding-top: 2.9rem;
+    padding-bottom: 2rem;
+}

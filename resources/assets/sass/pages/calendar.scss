@@ -1,0 +1,367 @@
+.calendar{
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: .5rem;
+  .fc-toolbar{
+    display: none!important;
+  }
+  .table-bordered .fc-body >tr >td{
+    border: 0;
+  }
+  .fc-day{
+    border: 1px solid #e9ecef;
+  }
+  .fc-view >.table-bordered, .fc-head-container, .fc-day-header {
+    border-top: 0!important;
+    border-left: 0!important;
+    border-right: 0!important;
+  }
+  .table-bordered thead th, .table-bordered thead td{
+    border-bottom-width: 0;
+  }
+  *{
+    font-weight: 300;
+  }
+
+  .fc-ltr .fc-h-event.fc-not-start, .fc-rtl .fc-h-event.fc-not-end{
+    padding-left: 2px;
+  }
+  .fc-ltr .fc-h-event.fc-not-end, .fc-rtl .fc-h-event.fc-not-start{
+    padding-right: 2px;
+  }
+  .fc-day-grid{
+    .fc-day{
+      position: relative;
+      background: white;
+      color: #212529;
+      &.fc-mon{
+        &:after{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 0;
+          border-left: 1px solid #e9ecef;
+        }
+      }
+      &.fc-sun{
+        &:after{
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 0;
+          border-right: 1px solid #e9ecef;
+        }
+      }
+    }
+    .fc-day.fc-today{
+
+      &.fc-mon{
+        &:after{
+          border-color: indianred;
+        }
+      }
+      &.fc-sun{
+        &:after{
+          border-color: indianred;
+        }
+      }
+    }
+    .fc-row:nth-child(1){
+      .fc-day{
+        &:before{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 0;
+          width: 100%;
+          border-top: 1px solid #e9ecef;
+        }
+      }
+      .fc-day.fc-today{
+        &:before{
+          content: "";
+          position: absolute;
+          left: -1px;
+          top: 0px;
+          width: 100%;
+          height: calc(100% - 2px);
+          border: 1px solid indianred;
+          background: transparent;
+        }
+      }
+    }
+    .fc-day.fc-today{
+      position: relative;
+      background: white;
+      color: #212529;
+      border: 1px solid indianred;
+      z-index: 2;
+      &:before{
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        width: 100%;
+        height: calc(100% - 1px);
+        border: 1px solid indianred;
+        background: transparent;
+      }
+    }
+  }
+  .fc-ltr .fc-basic-view .fc-day-top .fc-day-number{
+    float: left;
+    padding-left: 1rem;
+    padding-top: .7rem;
+  }
+  .fc-day-header span{
+    margin-left: 1rem;
+  }
+  .fc-day-number, .fc-event, .fc-day-header{
+    font-size: .9rem;
+    font-weight: 300;
+    text-align: left;
+  }
+  .fc-scroller{
+    height: auto!important;
+    overflow-y: hidden!important;
+  }
+  .fc-day-top{
+    padding-bottom: .7rem;
+  }
+  .fc-not-start, .fc-start{
+    .fc-content{
+      padding-left: .4rem;
+    }
+  }
+  .fc-end{
+    .fc-content{
+      text-align: right;
+      padding-right: .4rem;
+    }
+  }
+  .fc-not-start.fc-not-end{
+    .fc-content{
+      text-align: center;
+    }
+  }
+  .fc-row{
+    .fc-event-container{
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+  }
+  .fc-start.fc-end{
+    .fc-content{
+      text-align: left;
+    }
+  }
+  .fc-event{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 5px solid;
+    border-radius: 0;
+    padding-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 3px;
+    &:hover{
+      color: #cc0000!important;
+      text-decoration: underline;
+    }
+  }
+  .fc-more-cell{
+    >div{
+      text-align: center;
+    }
+  }
+  .fc-content{
+    .fc-time{
+      display: none!important;
+    }
+    .fc-title{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+  }
+  .fc-day-top.fc-today{
+    .fc-day-number{
+      color: black;
+      &:after{
+        content: ', сегодня';
+        text-align: right;
+      }
+    }
+  }
+  .fc-sat:not(.fc-other-month), .fc-sun:not(.fc-other-month){
+    color: #cc0000!important;
+    .fc-day-number{
+      color: #cc0000!important;
+    }
+  }
+  .fc-end{
+    margin-right: .5rem;
+  }
+  .fc-start{
+    margin-left: .5rem;
+  }
+  &__body{
+    &__pagination{
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+      &--top{
+
+      }
+      &--bottom{
+
+      }
+      &__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid transparent;
+        user-select: none;
+        transition: .2s;
+        &__icon{
+          font-size: 1.2rem;
+        }
+        &--left{
+          cursor: pointer;
+          line-height: 1;
+          text-transform: capitalize;
+          &:hover, &:focus{
+            border-bottom: 1px solid black;
+          }
+        }
+        &--center{
+          line-height: 1;
+          text-transform: capitalize;
+        }
+        &--right{
+          cursor: pointer;
+          line-height: 1;
+          text-transform: capitalize;
+          &:hover, &:focus{
+            border-bottom: 1px solid black;
+          }
+        }
+        &__text{
+          font-size: 1.2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          &--center{
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+    &__bar{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      &__item{
+        width: 25%;
+        position: relative;
+        @media (max-width: 575.98px) {
+          width: 100%;
+        }
+        @media (min-width: 576px) and (max-width: 800px) {
+          width: 50%;
+        }
+        @media (min-width: 801px) and (max-width: 992px) {
+          width: 33.3333333%;
+        }
+        &:before{
+          display: block;
+          content: "";
+          width: 100%;
+          padding-top: 100%;
+        }
+        &__content{
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: .5rem;
+          &--bg{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            &:hover, &:focus{
+              .calendar__body__bar__item__content--bg-dark{
+                background: rgba(0,0,0,.1);
+              }
+            }
+          }
+          &--bg-dark{
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            background: rgba(0,0,0,.3);
+            width: 100%;
+            height: 100%;
+            transition: .2s;
+          }
+          &--title{
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-top: auto;
+          }
+          &--description{
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #E5E5E5;
+            font-family: 'PT Sans', sans-serif;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-bottom: auto;
+            line-height: 1.2;
+          }
+          &--when{
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            font-family: 'PT Sans', sans-serif;
+            padding: 1rem;
+            white-space: nowrap;
+          }
+          &--btn{
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: none;
+            justify-content: center;
+            opacity: 0;
+            transition: .2s;
+            margin-bottom: 2.1667rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+
+.section__reviews {
+    background: url('/images/template/bg/pattern-gray-main.svg') top center;
+    background-size: cover;
+    padding-top: 8rem;
+    margin-top: -7rem;
+    width: 100%;
+    padding-bottom: 6rem;
+}
+
+.reviews__h2 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+    font-weight: 300;
+}
+
+.reviews__all-wrapper {
+    padding-top: 1rem;
+}
+
+.review {
+    padding: 3rem 1rem;
+}
+
+.review__bg {
+    /*background: !*url('/images/template/reviews/review-top-right.svg') top right no-repeat,*! url('/images/template/reviews/review-bottom-right.svg') bottom 3.5rem right no-repeat;*/
+    background: url('/images/template/reviews/review-bottom-right.svg') bottom 3.5rem right no-repeat, url('/images/template/reviews/up-part-feedback.svg') top 0 right no-repeat;
+    background-size: 6rem;
+
+    padding-bottom: 7rem;
+    overflow: visible;
+}
+
+.review__bg-top {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*overflow: hidden;*/
+    /*border-top: .5rem solid #ca1824;*/
+    /*border-radius: .2rem 3.2rem 0 0;*/
+    position: absolute;
+    top: 0;
+    right: 4rem;
+    width: 100%;
+    overflow: hidden;
+    height: .5rem;
+    background: #ca1824;
+}
+
+.review__bg-bottom {
+    position: absolute;
+    bottom: 0;
+    left: -9rem;
+    width: 100%;
+    height: 0;
+    border-bottom: .5rem solid #ca1824;
+    border-radius: .2rem;
+}
+
+.review__bg-right {
+    position: absolute;
+    top: 4.2rem;
+    bottom: 4.9rem;
+    right: 0;
+    width: 0;
+    height: auto;
+    border-right: .545rem solid #ca1824;
+    /*border-bottom-right-radius: 1rem;*/
+}
+
+.review__bg-inner {
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 2rem 2rem;
+    border-radius: .2rem;
+    border-left: .5rem solid #ca1824;
+}
+
+.review__quote-left {
+    position: relative;
+    bottom: -3rem;
+}
+
+/*.review__quote-right {*/
+    /*position: relative;*/
+    /*top: -5rem;*/
+/*}*/
+
+.review__author {
+    width: 9rem;
+    text-align: center;
+    position: absolute;
+    top: 91%;
+    right: 0;
+}

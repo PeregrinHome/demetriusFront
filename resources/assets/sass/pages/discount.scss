@@ -1,0 +1,80 @@
+.bg-yellow-d{
+  background-color: #fed773;
+}
+.section__discount{
+  &__text{
+    height: 5.5rem;
+    cursor: pointer;
+    user-select: none;
+    p{
+      &:hover, &:focus{
+        color: #cc0000;
+        .border-bottom-dashed{
+          border-color: transparent;
+          transition: border-color .2s ease-in;
+        }
+        .section__discount__text__collapse-btn{
+          &:before{
+            opacity: 0;
+          }
+          &:after{
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &__collapse-btn{
+      position: relative;
+      &:before, &:after{
+        content: "";
+        position: absolute;
+        top: .6rem;
+        right: -1.5rem;
+        width: 1rem;
+        height: .5rem;
+        transform: rotate(0deg);
+        transition: all .2s ease-in;
+      }
+      &:before{
+        background-image: url(/images/static/discount/shevron-black.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 1;
+      }
+      &:after{
+        background-image: url(/images/static/discount/shevron-red-hover.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0;
+      }
+    }
+    *[aria-expanded="true"]{
+      .section__discount__text__collapse-btn{
+        &:before, &:after{
+          transform: rotate(180deg);
+          transition: transform .2s ease-in;
+        }
+      }
+    }
+  }
+  &__action__img{
+    box-shadow: 0px 20px 60px -17px rgba(0,0,0,0.75);
+    &.purple{
+      box-shadow: 0px 20px 60px -17px rgba(47,27,76,0.75);
+    }
+    &.white{
+      box-shadow: 0px 20px 60px -17px rgba(255,255,255,0.75);
+    }
+    &.blue-green-s{
+      box-shadow: 0px 20px 60px -17px rgba(68,75,94,0.75);
+    }
+    &.pink{
+      box-shadow: 0px 20px 60px -17px rgba(238,82,121,0.75);
+    }
+    &.red{
+      box-shadow: 0px 20px 60px -17px rgba(194, 0, 0, 0.75);
+    }
+  }
+}

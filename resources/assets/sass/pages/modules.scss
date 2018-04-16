@@ -1,0 +1,17 @@
+.module{
+  &--favorite-articles{
+    &__item{
+      padding-bottom: 2rem;
+      &__img{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+      &__type{
+        color: #818181;
+      }
+    }
+  }
+}

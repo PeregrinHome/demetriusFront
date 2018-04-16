@@ -1,0 +1,12 @@
+.link-black--red {
+    color: black;
+    border-bottom: solid;
+    border-width: .05rem;
+    text-decoration: none;
+}
+
+.link-black--red:hover, .link-black--red:focus {
+    color: #cc0000;
+    border-bottom: transparent;
+    text-decoration: none;
+}

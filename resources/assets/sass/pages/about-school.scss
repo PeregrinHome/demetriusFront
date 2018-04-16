@@ -1,0 +1,280 @@
+.width-53{
+  width: 53%;
+}
+.width-47{
+  width: 47%;
+}
+.about-school{
+  &__action{
+    &--1{
+      margin-top: -4rem;
+      position: relative;
+      z-index: 2;
+    }
+    &--2{
+      margin-top: -2rem;
+      position: relative;
+      z-index: 3;
+    }
+    &--3{
+      margin-top: -2rem;
+      position: relative;
+      z-index: 4;
+    }
+    &--4{
+      margin-top: -4rem;
+      position: relative;
+      z-index: 5;
+    }
+    &--5{
+      margin-top: -2rem;
+    }
+  }
+  &__our-team{
+    margin-top: -4rem;
+    position: relative;
+    z-index: 6;
+    &__block-wrap{
+      width: 100%;
+      display: flex;
+      @media screen and (max-width: 900px) {
+        flex-direction: column;
+      }
+    }
+    &__block{
+      //width: 50%;
+      //display: flex;
+      &__item{
+        cursor: pointer;
+        &__height{
+          position: relative;
+          background-color: transparent;
+          width: 100%;
+          height: 15rem;
+          display: flex;
+          align-items: flex-end;
+        }
+        &--img{
+          height: 16rem;
+          position: relative;
+        }
+        //&__height--1:before{
+        //  padding-top: 123.316%!important;
+        //}
+        //&__height--2:before{
+        //  padding-top: 91.319%!important;
+        //}
+        //&__height--3:before{
+        //  padding-top: 75.339%!important;
+        //}
+        //&__height--4:before{
+        //  padding-top: 138.537%!important;
+        //}
+        //&__height--5:before{
+        //  padding-top: 165.563%!important;
+        //}
+        //&__height--6:before{
+        //  padding-top: 124.8889%!important;
+        //}
+        //&__height--7:before{
+        //  padding-top: 82.6923%!important;
+        //}
+        //&__height--8:before{
+        //  padding-top: 125.281%!important;
+        //}
+        &--img{
+
+          //position: absolute;
+          //z-index: -1;
+
+          //background-repeat: no-repeat;
+          //background-size: contain;
+          //background-position: bottom center;
+          //height: 15rem;
+          //width: 400px;
+
+          //min-width: 100%;
+          //height: auto;
+
+        }
+        &--title{
+          text-align: center;
+          padding-top: 2rem;
+          &__text{
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+  &__our-partners{
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 7;
+    &__item{
+      &--img{
+        height: 130px;
+        margin-top: 2rem;
+      }
+      &--text{
+        padding-top: 2rem;
+      }
+    }
+  }
+  &__subscription{
+    position: relative;
+    background-image: url("/images/pages/about-school/line.png"), url("/images/pages/about-school/curl.png");
+    background-size: 100% 3px, auto;
+    background-repeat: no-repeat;
+    background-position: 10% 42%, 100% 100%;
+    @media screen and (max-width: 992px) {
+      background-image: url("/images/pages/about-school/line.png"), url("/images/pages/about-school/line.png"), url("/images/pages/about-school/curl.png");
+      background-size: 100% 3px, 100% 3px, auto;
+      background-repeat: no-repeat;
+      background-position: 10% 24%, 10% 66%, 100% 100%;
+    }
+    @media screen and (max-width: 576px) {
+      background-position: 10% 24%, 10% 66%, 100% 100%;
+      background-size: 100% 3px, 100% 3px, 40% auto;
+    }
+    @media screen and (max-width: 400px) {
+      background-position: 10% 27%, 10% 69%, 100% 100%;
+      background-size: 100% 3px, 100% 3px, 50% auto;
+    }
+    &__paper-bend{
+      position: absolute;
+      bottom: 1rem;
+      right: 0rem;
+      @media screen and (max-width: 992px) {
+        bottom: 2rem;
+      }
+      &__link{
+        display: block;
+        text-decoration-skip: unset;
+        &:hover, &:focus{
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.about-school__our-team__block{
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
+}
+.about-school__our-team__block__item--img{
+  &--1:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -8;
+    background-image: url("/images/pages/about-school/zaryna.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: bottom left;
+    height: 13rem;
+    width: 11rem;
+  }
+  &--2:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: -1rem;
+    z-index: -7;
+    background-image: url("/images/pages/about-school/girl2.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: bottom left;
+    height: 14rem;
+    width: 15rem;
+  }
+  &--3:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: -5rem;
+    z-index: -2;
+    background-image: url("/images/pages/about-school/main_photo3_gray.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: bottom left;
+    height: 15rem;
+    width: 19rem;
+  }
+  &--4:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: .5rem;
+    z-index: -5;
+    background-image: url("/images/pages/about-school/olga-minina.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: bottom left;
+    height: 15rem;
+    width: 13rem;
+  }
+  &--5:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 1.2rem;
+    z-index: -3;
+    background-image: url("/images/pages/about-school/elena-mareycheva.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: bottom left;
+    height: 13rem;
+    width: 8rem;
+  }
+  &--6:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: -2rem;
+    z-index: -6;
+    background-image: url("/images/pages/about-school/diana-boldyreva.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: bottom left;
+    height: 15rem;
+    width: 13rem;
+  }
+  &--7:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: -5rem;
+    z-index: -4;
+    background-image: url("/images/pages/about-school/maxim-vorobiev.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: bottom left;
+    height: 14rem;
+    width: 16rem;
+  }
+  &--8:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -9;
+    background-image: url("/images/pages/about-school/girl3.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: bottom left;
+    height: 12rem;
+    width: 11rem;
+  }
+}

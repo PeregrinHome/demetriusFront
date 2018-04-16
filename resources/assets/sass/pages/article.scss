@@ -1,0 +1,33 @@
+.article{
+  &__header{
+    &__container{
+      height: 34rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 1rem;
+      @media screen and (max-width: 480px) {
+        height: 28rem;
+      }
+      &__title{
+        position: relative;
+        &--type-article{
+          position: absolute;
+          top: -7rem;
+          left: 0rem;
+          width: 100%;
+          @media screen and (max-width: 480px) {
+            top: -4rem;
+          }
+        }
+      }
+    }
+  }
+  &__body{
+    margin-top: -4rem;
+    &__content{
+      padding-top: 4rem;
+    }
+  }
+}
