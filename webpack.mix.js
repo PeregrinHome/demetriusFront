@@ -78,6 +78,12 @@ mix.styles([
 mix.copy('./node_modules/font-awesome/fonts', 'public/fonts');
 mix.copy('./node_modules/jquery-ui-dist/images','public/css/images');
 
+
+mix.scripts([
+    './resources/assets/landing/scripts.js'
+],'public/js/scripts.js')
+    .version();
+
 mix.scripts([
     './node_modules/jquery/dist/jquery.js',
     './node_modules/popper.js/dist/umd/popper.js',

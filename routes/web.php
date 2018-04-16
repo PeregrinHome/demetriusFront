@@ -18,6 +18,8 @@ setlocale(LC_ALL, 'ru_RU.utf8');
 Auth::routes();
 Route::get('/', 'PagesController@index')->name('index');
 
+Route::view('/lending', 'lendings.lending');
+
 Route::get('getCalendarEvent', 'ExempleJsonResponse@getEvent');
 Route::get('getCalendarNav', 'ExempleJsonResponse@getNav');
 
