@@ -104,11 +104,6 @@ $(document).ready(function(){
     }
 
 
-
-    if($(document).width() > 768 && typeof(dhtmlLoadScript) === "function"){
-        dhtmlLoadScript("https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af683efc92ee432a7bc17743f6b15edbd8feae95ce09c5aeb4b68e5221b4fd340&amp;id=contacts__map--map");
-    }
-
     var timeoutTrigger1 = null, timeoutTrigger2 = null;
     
     $('.js-random-review').click(function (e) {

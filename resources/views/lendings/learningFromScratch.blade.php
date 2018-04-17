@@ -542,11 +542,11 @@
                 <div class="d-flex align-items-center justify-content-center justify-content-md-start">
                     <div class="images-contain m-2"
                          style="height: 6rem; width: 6rem; background-image: url(/images/lending/ava-min.png);">
-                        <a href="#" class="w-100 h-100 d-block"></a>
+                        <a href="https://vk.com/l.demetrius" class="w-100 h-100 d-block"></a>
                     </div>
                     <div class="text-left">
-                        <p class="mb-0"><a href="#" class="font-weight-bold border-bottom-solid">Кристина</a><a
-                                    href="#"><img class="d-inline pl-1 icon-small-top" style="height: .8rem;"
+                        <p class="mb-0"><a href="https://vk.com/l.demetrius" class="font-weight-bold border-bottom-solid">Кристина</a><a
+                                    href="https://vk.com/l.demetrius"><img class="d-inline pl-1 icon-small-top" style="height: .8rem;"
                                                   src="/images/lending/vk-blue.svg" alt="vk-blue"></a></p>
                         <p class="font-italic mb-0">Руководитель проекта</p>
                     </div>
@@ -568,26 +568,26 @@
             <div class="col-auto">
                 <div class="images-contain m-2"
                      style="height: 3rem; width: 3rem; background-image: url(/images/lending/social/fb.svg);">
-                    <a href="#" class="w-100 h-100 d-block"></a>
+                    <a href="https://www.facebook.com/demetrius.su" target="_blank" class="w-100 h-100 d-block"></a>
                 </div>
             </div>
             <div class="col-auto">
                 <div class="images-contain m-2"
                      style="height: 3rem; width: 3rem; background-image: url(/images/lending/social/vk.svg);">
-                    <a href="#" class="w-100 h-100 d-block"></a>
+                    <a href="https://vk.com/demetrius_school" target="_blank" class="w-100 h-100 d-block"></a>
                 </div>
             </div>
             <div class="w-100 d-sm-none d-block"></div>
             <div class="col-auto">
                 <div class="images-contain m-2"
                      style="height: 3rem; width: 3rem; background-image: url(/images/lending/social/insta.svg);">
-                    <a href="#" class="w-100 h-100 d-block"></a>
+                    <a href="https://www.instagram.com/demetriusschool/" target="_blank" class="w-100 h-100 d-block"></a>
                 </div>
             </div>
             <div class="col-auto">
                 <div class="images-contain m-2"
                      style="height: 3rem; width: 3rem; background-image: url(/images/lending/social/youtube.svg);">
-                    <a href="#" class="w-100 h-100 d-block"></a>
+                    <a href="https://www.youtube.com/user/DemetriusSchool" target="_blank" class="w-100 h-100 d-block"></a>
                 </div>
             </div>
             <div class="col d-none d-lg-flex align-items-center">
@@ -597,7 +597,7 @@
             </div>
 
             <div class="col-12 pt-5 mt-4 text-center">
-                <a href="#" class="text-white border-bottom-dashed">
+                <a href="{{ route('policy') }}" target="_blank" class="text-white border-bottom-dashed">
                     Политика конфиденциальности
                 </a>
             </div>
@@ -730,7 +730,7 @@
                         },
                         trainerBlock: [
                             {
-                                img: '/images/pages/about-school/girl3.png',
+                                img: '/images/lending/2.png',
                                 link: 'http://demetrius.ru/trainers/2032',
                                 name: 'АЛЕНА <br class="d-none d-md-block">' +
                                 'МАКОТЕРСКАЯ',
@@ -762,7 +762,7 @@
                                 'стрижке'
                             },
                             {
-                                img: '/images/pages/about-school/girl3.png',
+                                img: '/images/lending/1.png',
                                 link: 'http://demetrius.ru/trainers/2023',
                                 name: 'ДИАНА <br class="d-none d-md-block">' +
                                 'БОЛДЫРЕВА',
@@ -851,7 +851,7 @@
                         },
                         trainerBlock: [
                             {
-                                img: '/images/pages/about-school/girl3.png',
+                                img: '/images/lending/2.png',
                                 link: 'http://demetrius.ru/trainers/2032',
                                 name: 'АЛЕНА <br class="d-none d-md-block">' +
                                 'МАКОТЕРСКАЯ',
@@ -963,7 +963,7 @@
                         },
                         trainerBlock: [
                             {
-                                img: '/images/pages/about-school/girl3.png',
+                                img: '/images/lending/1.png',
                                 link: 'http://demetrius.ru/trainers/2023',
                                 name: 'ДИАНА <br class="d-none d-md-block">' +
                                 'БОЛДЫРЕВА',

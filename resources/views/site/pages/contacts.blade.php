@@ -142,8 +142,7 @@
     </section>
 
     <section class="contacts__map position-relative overflow-hidden">
-        <a href="https://yandex.ru/maps/?um=constructor%3Af683efc92ee432a7bc17743f6b15edbd8feae95ce09c5aeb4b68e5221b4fd340&amp;source=constructorStatic" target="_blank"><div id="contacts__map--map--md" class="contacts__map--map contacts__map--map--md images-cover" style="background-image: url('https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Af683efc92ee432a7bc17743f6b15edbd8feae95ce09c5aeb4b68e5221b4fd340&amp;width=600&amp;height=450&amp;lang=ru_RU');"></div></a>
-        <div id="contacts__map--map" class="contacts__map--map hidden-md"></div>
+        <div id="contacts__map--map" class="contacts__map--map"></div>
     </section>
 
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
@@ -180,13 +179,49 @@
         </div>
     </div>
 
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script>
-        function dhtmlLoadScript(url)
-        {
-            var e = document.createElement("script");
-            e.src = url;
-            e.type="text/javascript";
-            document.getElementsByTagName("body")[0].appendChild(e);
+        // Дождёмся загрузки API и готовности DOM.
+        ymaps.ready(initMap);
+
+        function initMap() {
+
+            var myMap = new ymaps.Map('contacts__map--map', {
+                    center: [55.712589, 37.723870],
+                    zoom: 17,
+                    controls: ['smallMapDefaultSet'],
+                    type: 'yandex#map'
+                }),
+                // Создаём макет содержимого.
+                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                    '<div style="color: #FFFFFF; font-weight: normal;">$[properties.iconContent]</div>'
+                ),
+
+                myPlacemarkWithContent1 = new ymaps.Placemark([55.712589, 37.723870], {
+                    hintContent: 'Demetrius',
+                    balloonContent: 'Demetrius, Россия, Москва, Волгоградский проспект, 47',
+                    iconContent: ''
+                }, {
+                    // Опции.
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#imageWithContent',
+                    // Своё изображение иконки метки.
+                    iconImageHref: 'images/lending/map.svg',
+                    // Размеры метки.
+                    iconImageSize: [50, 50],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-24, -50],
+                    // Смещение слоя с содержимым относительно слоя с картинкой.
+                    iconContentOffset: [15, 15],
+                    // Макет содержимого.
+                    iconContentLayout: MyIconContentLayout
+                });
+
+            myMap.behaviors.disable('scrollZoom');
+
+            myMap.geoObjects
+                .add(myPlacemarkWithContent1);
         }
     </script>
 @endsection
