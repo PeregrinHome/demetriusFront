@@ -29,6 +29,12 @@
         .ekko-lightbox .modal-body{
             padding: 0;
         }
+
+        @media (max-width: 767.98px) {
+            .simplebar-track{
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="site__body">
@@ -61,7 +67,7 @@
         <div class="bg-line-left w-100" style="height: 2px;"></div>
     </div>
     <div class="col-auto">
-        <a href="http://www.symmetron.ru/suppliers/infineon/files/pdf/infineon/INF12.pdf" target="_blank"
+        <a href="{{route('index')}}/docs/info.pdf" target="_blank"
            class="landing-red-link text-decoration-none">
             <div class="row no-gutters align-items-center">
                 <div class="col-auto">
@@ -116,8 +122,7 @@
         </div>
     </div>
 
-
-    <section class="pt-5 pb-5">
+    <section class="pt-5 pb-3">
 
         <div class="container-primary pb-4 pl-3 pr-3 pl-md-0 pr-md-0">
             <div class="row no-gutters">
@@ -264,14 +269,14 @@
 
             </div>
 
-            <div class="row pt-3 pb-5 d-none">
+            <div class="row pt-3 pb-5">
                 <div class="col-12 text-center">
-                    <a href="#" class="btn t__btn-white">Еще</a>
+                    <a target="_blank" href="{{ route('photoGallery') }}" class="btn t__btn-white">Еще</a>
                 </div>
             </div>
         </div>
 
-        <div class="mb-5 mt-3 container-primary images-cover pt-5 pb-5 d-flex flex-column align-items-center" style="background-image: url(/images/lending/woman-min.png);">
+        <div class="mb-5 container-primary images-cover pt-5 pb-5 d-flex flex-column align-items-center" style="background-image: url(/images/lending/woman-min.png);">
             <p class="pt-5 pb-5 text-white h2 text-center">ЖЕНСКИЙ МАСТЕР</p>
             <div class="landing-fix-mw ml-3 mr-3 bg-g-yellow landing-border-radius p-5 d-flex flex-column align-items-center justify-content-center">
                 <div class="row no-gutters pl-lg-5 pr-lg-5 w-100">
@@ -284,7 +289,11 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-4 pb-3 pb-md-0">
-                        <a href="#" class="landing__danger--btn btn btn-danger btn-primary--gradient w-100 h-100">Записаться</a>
+                        <a   data-toggle="modal"
+                             data-target="#oneModal"
+                             data-title="Запись мастером" data-btntitle="Записаться"
+                             data-inputbox="{{ json_encode([[ 'name' => 'user_type_id', 'value' => '2']]) }}"
+                             href="#oneModal" class="landing__danger--btn btn btn-danger btn-primary--gradient w-100 h-100">Записаться</a>
                     </div>
                     <div class="col-12 col-md-4 pb-3 pb-md-0">
                         <p v-html="links[linksActive].info.actionBlock.smallDesc"
@@ -313,7 +322,7 @@
                  class="w-100 lending-fix-height-1"></div>
         </div>
 
-        <div class="container-fluid pb-5 container-primary">
+        <div class="container-fluid container-primary">
             <div class="row">
                 <div class="col-12">
                     <p class="text-center h4">Отзывы</p>
@@ -321,6 +330,7 @@
             </div>
 
             <div class="row no-gutters pt-3">
+
                 <div class="col-12 col-md-6">
                     <div class="row no-gutters justify-content-center">
                         <div class="col-1 d-flex">
@@ -346,8 +356,8 @@
                         <div class="col-10 col-lg-8 mt-5 mb-5">
                             <div class="embed-responsive embed-responsive-16by9">
                                 <div class="embed-responsive-item">
-                                    <a class="text-decoration-none" data-toggle="lightbox" href="https://www.youtube.com/watch?v=rVNJ1HH0b3k">
-                                        <div class="w-100 h-100 images-cover video-hover-icon" style="background-image: url(https://i.ytimg.com/vi/rVNJ1HH0b3k/hqdefault.jpg);">
+                                    <a class="text-decoration-none" data-toggle="lightbox" href="https://www.youtube.com/watch?v=qamhpP4Vhhg">
+                                        <div class="w-100 h-100 images-cover video-hover-icon" style="background-image: url(/images/lending/review1.png);">
                                         </div>
                                     </a>
                                 </div>
@@ -363,11 +373,11 @@
                         <div class="col-10 col-lg-8 d-flex">
                             <div class="reviews__text">
                                 <p class="font-weight-bold">
-                                    Марина Саяпина, Зеленоград <br class="d-md-none"><span class="text-muted font-weight-light pl-1">2 марта 2018</span>
+                                    Екатерина Осетрова, Москва <br class="d-md-none"><span class="text-muted font-weight-light pl-1">26 марта 2018</span>
                                 </p>
                                 <div class="js-text--truncate" style="margin: 0;">
                                     <div class="js-text--truncate--metka js-random-review--text">
-                                        <p>Спасибо за&nbsp;работу от&nbsp;вашей школы! За&nbsp;мои 30&nbsp;лет меня так не&nbsp;стригли ещё, все в&nbsp;комплексе: и&nbsp;ощущения, и&nbsp;ожидания, и&nbsp;укладка самостоятельно дома, подбор под тип волос, форму лица, и&nbsp;модно, и&nbsp;новые технологии укладки))! Даже несмотря на&nbsp;то, что была моделью на&nbsp;мастер-классе! Теперь придётся ездить в&nbsp;Москву стричься, не&nbsp;доверю никому свои волосы))</p>
+                                        <p>Давно мечтала побывать в этой школе и безумно рада, что наконец попала в Demetrius. Теперь школа Demetrius стала одним из любимым мест. Чувствую, кто-то не ляжет спать. Жизнь заиграла новыми красками. После череды не самых простых событий в моей жизни, сегодняшний день как горсть солнца и позитива. Я получила ответы на все свои вопросы и даже больше. Время пролетело быстро и очень продуктивно. Я обязательно хочу побывать в Demetrius снова. Спасибо!</p>
                                     </div>
                                 </div>
                             </div>
@@ -375,13 +385,14 @@
                         <div class="col-1"></div>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-6 pt-md-5">
                     <div class="row no-gutters justify-content-center">
                         <div class="col-10 col-lg-8 mt-5 mb-5">
                             <div class="embed-responsive embed-responsive-16by9">
                                 <div class="embed-responsive-item">
-                                    <a class="text-decoration-none" data-toggle="lightbox" href="https://www.youtube.com/watch?v=rVNJ1HH0b3k">
-                                        <div class="w-100 h-100 images-cover video-hover-icon" style="background-image: url(https://i.ytimg.com/vi/rVNJ1HH0b3k/hqdefault.jpg);">
+                                    <a class="text-decoration-none" data-toggle="lightbox" href="https://www.youtube.com/watch?v=-p1ZSRXipEc">
+                                        <div class="w-100 h-100 images-cover video-hover-icon" style="background-image: url(/images/lending/review3.png);">
                                         </div>
                                     </a>
                                 </div>
@@ -397,11 +408,14 @@
                         <div class="col-10 col-lg-8 d-flex">
                             <div class="reviews__text">
                                 <p class="font-weight-bold">
-                                    Марина Саяпина, Зеленоград <br class="d-md-none"><span class="text-muted font-weight-light pl-1">2 марта 2018</span>
+                                    Наталья Хусаинова, Москва <br class="d-md-none"><span class="text-muted font-weight-light pl-1">26 марта 2018</span>
                                 </p>
                                 <div class="js-text--truncate" style="margin: 0;">
                                     <div class="js-text--truncate--metka js-random-review--text">
-                                        <p>Спасибо за&nbsp;работу от&nbsp;вашей школы! За&nbsp;мои 30&nbsp;лет меня так не&nbsp;стригли ещё, все в&nbsp;комплексе: и&nbsp;ощущения, и&nbsp;ожидания, и&nbsp;укладка самостоятельно дома, подбор под тип волос, форму лица, и&nbsp;модно, и&nbsp;новые технологии укладки))! Даже несмотря на&nbsp;то, что была моделью на&nbsp;мастер-классе! Теперь придётся ездить в&nbsp;Москву стричься, не&nbsp;доверю никому свои волосы))</p>
+
+                                        <p>Demetrius, вы&nbsp;лучшая школа! Я&nbsp;прошла много курсов здесь и&nbsp;могу с&nbsp;уверенностью заявить, что все ребята тут профессионалы и&nbsp;фанаты своего дела. Все техники, будь&nbsp;то стрижки, окрашивания, укладки, современные, востребованные, легкие в&nbsp;работе. </p>
+                                        <p>Хочется возвращаться к&nbsp;вам снова и&nbsp;снова! Вы&nbsp;заряжаете энергией, верой в&nbsp;будущее и&nbsp;успех!</p>
+
                                     </div>
                                 </div>
                             </div>
@@ -412,8 +426,8 @@
                         <div class="col-10 col-lg-8 mt-5 mb-5">
                             <div class="embed-responsive embed-responsive-16by9">
                                 <div class="embed-responsive-item">
-                                    <a class="text-decoration-none" data-toggle="lightbox" href="https://www.youtube.com/watch?v=rVNJ1HH0b3k">
-                                        <div class="w-100 h-100 images-cover video-hover-icon" style="background-image: url(https://i.ytimg.com/vi/rVNJ1HH0b3k/hqdefault.jpg);">
+                                    <a class="text-decoration-none" data-toggle="lightbox" href="https://www.youtube.com/watch?v=Zbf5wz5HCBE">
+                                        <div class="w-100 h-100 images-cover video-hover-icon" style="background-image: url(/images/lending/review2.png);">
                                         </div>
                                     </a>
                                 </div>
@@ -421,17 +435,17 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="row pt-3 pb-5">
                 <div class="col-12 text-center">
-                    <a href="#" class="btn t__btn-white">Еще</a>
+                    <a target="_blank" href="{{ route('reviews.index') }}" class="btn t__btn-white">Еще</a>
                 </div>
             </div>
         </div>
 
     </section>
-
 
     <div class="container-fluid container-primary pl-3 pr-3">
         <div class="row justify-content-between">
@@ -540,20 +554,10 @@
             </div>
         </div>
     </div>
-
 </section>
 
-<section class="position-relative overflow-hidden container-primary" style="height: 20rem;">
-    <a class="h-100 w-100 d-block d-md-none"
-       href="https://yandex.ru/maps/?um=constructor%3Af683efc92ee432a7bc17743f6b15edbd8feae95ce09c5aeb4b68e5221b4fd340&amp;source=constructorStatic"
-       target="_blank">
-        <div class="images-cover"
-             style="background-image: url('https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Af683efc92ee432a7bc17743f6b15edbd8feae95ce09c5aeb4b68e5221b4fd340&amp;width=600&amp;height=450&amp;lang=ru_RU');"></div>
-    </a>
-    <div class="w-100 h-100 d-none d-md-block">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A980839373fb3c161179882531fe3280a26ae743620f168f3a84734ab5524f101&amp;source=constructor"
-                width="100%" height="400" frameborder="0"></iframe>
-    </div>
+<section class="position-relative overflow-hidden container-primary">
+    <div id="map" class="w-100" style="height: 20rem;"></div>
 </section>
 
 <footer class="pt-5 pb-5 main-bg-color-red">
@@ -600,6 +604,16 @@
         </div>
     </div>
 </footer>
+
+
+@include('modals.modal',
+[
+    'id' => 'oneModal',
+    'title' => 'Запись моделью',
+    'btn_title' => 'Записаться'
+
+])
+
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -612,6 +626,10 @@
     var js_lending__setting = {
         el: '#js-lending',
         data: {
+            reviews:{
+                video: [],
+                text: []
+            },
             images: [
                 {
                     img: '/images/lending/demophoto/1-min.jpg',
@@ -1081,18 +1099,18 @@
             }
         },
         methods: {
-            clickLink(i) {
+            clickLink: function(i) {
                 this.links[this.linksActive].class.active = false;
                 this.links[i].class.active = true;
                 this.linksActive = i;
             },
-            clickArrow(i) {
+            clickArrow: function(i) {
                 this.linksArrow = this.linksActive + i;
                 if (this.linksArrow >= 0 && this.linksArrow < this.links.length) {
                     this.clickLink(this.linksArrow);
                 }
             },
-            changeSelect(e){
+            changeSelect: function(e){
                 this.clickLink(parseInt(e.target.value));
             }
         }
@@ -1100,5 +1118,50 @@
     var js_lending = new Vue(js_lending__setting);
 </script>
 <script src="{{ mix('js/scripts.js') }}"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+    // Дождёмся загрузки API и готовности DOM.
+    ymaps.ready(initMap);
+
+    function initMap() {
+
+        var myMap = new ymaps.Map('map', {
+                center: [55.712589, 37.723870],
+                zoom: 17,
+                controls: ['smallMapDefaultSet'],
+                type: 'yandex#map'
+            }),
+            // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: normal;">$[properties.iconContent]</div>'
+            ),
+
+            myPlacemarkWithContent1 = new ymaps.Placemark([55.712589, 37.723870], {
+                hintContent: 'Demetrius',
+                balloonContent: 'Demetrius, Россия, Москва, Волгоградский проспект, 47',
+                iconContent: ''
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#imageWithContent',
+                // Своё изображение иконки метки.
+                iconImageHref: 'images/lending/map.svg',
+                // Размеры метки.
+                iconImageSize: [50, 50],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-24, -50],
+                // Смещение слоя с содержимым относительно слоя с картинкой.
+                iconContentOffset: [15, 15],
+                // Макет содержимого.
+                iconContentLayout: MyIconContentLayout
+            });
+
+        myMap.behaviors.disable('scrollZoom');
+
+        myMap.geoObjects
+            .add(myPlacemarkWithContent1);
+    }
+</script>
 </body>
 </html>
