@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'rouble';
+    src: url('fonts/rouble.eot');
+    src: url('fonts/rouble.eot') format('embedded-opentype'),
+         url('fonts/rouble.woff2') format('woff2'),
+         url('fonts/rouble.woff') format('woff'),
+         url('fonts/rouble.ttf') format('truetype'),
+         url('fonts/rouble.svg#rouble') format('svg');
+}

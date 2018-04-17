@@ -19,7 +19,14 @@
   background: linear-gradient(to bottom, #6bc5d0 0%,#5cb23a 33%,#efc131 67%,#e9493f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bc5d0', endColorstr='#e9493f',GradientType=0 ); /* IE6-9 */
 }
-
+.ruble{
+  font-family: 'rouble', sans-serif!important;
+}
+.text-md-nowrap{
+  @media (min-width: 768px) {
+    white-space: nowrap!important;
+  }
+}
 .bg-g-yellow{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd865+0,feecb5+100 */
   background: #ffd865; /* Old browsers */

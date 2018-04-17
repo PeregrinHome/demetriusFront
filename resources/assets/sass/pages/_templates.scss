@@ -876,6 +876,7 @@ select.form-control {
     }
   }
   &--btn{
+    padding-top: .8rem!important;
     border-radius: .2rem;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -883,6 +884,19 @@ select.form-control {
       font-weight: 400!important;
       font-size: .9rem;
     }
+  }
+}
+.lending-fix-height-1{
+  @media (min-height: 768px) {
+    height: 8rem;
+  }
+}
+.landing-fix-mw{
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    min-width: 90%;
+  }
+  @media (min-width: 992px) {
+    min-width: 50rem;
   }
 }
 .t{

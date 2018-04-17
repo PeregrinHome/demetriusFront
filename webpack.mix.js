@@ -39,6 +39,7 @@ mix.styles([
 
     './node_modules/fullcalendar/dist/fullcalendar.min.css',
 
+    './resources/assets/fonts/rouble.css',
     './resources/assets/css/*/*/*.css',
     './resources/assets/css/*/*.css',
     './resources/assets/css/*.css',
@@ -46,6 +47,7 @@ mix.styles([
 ], 'public/css/all.css')
     .styles(
         [
+            './resources/assets/fonts/rouble.css',
             './resources/assets/css/*/*/*.css',
             './resources/assets/css/*/*.css',
             './resources/assets/css/*.css',
@@ -56,6 +58,7 @@ mix.styles([
 //
 mix.copy('./node_modules/font-awesome/fonts', 'public/fonts');
 mix.copy('./node_modules/jquery-ui-dist/images', 'public/css/images');
+mix.copy('./resources/assets/fonts/fonts', 'public/css/fonts');
 
 
 mix.scripts([

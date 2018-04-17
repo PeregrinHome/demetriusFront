@@ -23,7 +23,7 @@
         </style>
     </noscript>
     <style>
-        *{
+        *:not(.ruble){
             font-family: 'PT Sans', 'Oswald', sans-serif;
         }
         .ekko-lightbox .modal-body{
@@ -246,14 +246,16 @@
             </div>
             <div class="row no-gutters">
 
-                <div class="col-6 col-md-4">
+                <div v-for="item in images" class="col-6 col-md-4">
                     <div class="p-3">
-                        <a href="/images/lending/s_nulya_na_sayt/27.jpg"
+                        <a :href="item.img"
                            data-toggle="lightbox" data-gallery="gallery-01" data-type="image"
                            target="_blank" class="text-decoration-none">
                             <div class="embed-responsive embed-responsive-1by1">
                                 <div class="embed-responsive-item">
-                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/27.jpg);"></div>
+                                    <div class="images-cover w-100 h-100"
+                                         :style="'background-image: url('+item.minImg+');'">
+                                    </div>
                                 </div>
                             </div>
                         </a>
@@ -262,21 +264,22 @@
 
             </div>
 
-            <div class="row pt-3 pb-5">
+            <div class="row pt-3 pb-5 d-none">
                 <div class="col-12 text-center">
                     <a href="#" class="btn t__btn-white">Еще</a>
                 </div>
             </div>
         </div>
 
-        <div class="mb-5 container-primary images-cover pt-5 pb-5 d-flex flex-column align-items-center" style="background-image: url(/images/lending/woman-min.png);">
+        <div class="mb-5 mt-3 container-primary images-cover pt-5 pb-5 d-flex flex-column align-items-center" style="background-image: url(/images/lending/woman-min.png);">
             <p class="pt-5 pb-5 text-white h2 text-center">ЖЕНСКИЙ МАСТЕР</p>
-            <div class="ml-3 mr-3 bg-g-yellow landing-border-radius p-5 d-flex flex-column align-items-center justify-content-center">
-                <div class="row no-gutters pb-3 pb-md-5 pl-lg-5 pr-lg-5 w-100">
+            <div class="landing-fix-mw ml-3 mr-3 bg-g-yellow landing-border-radius p-5 d-flex flex-column align-items-center justify-content-center">
+                <div class="row no-gutters pl-lg-5 pr-lg-5 w-100">
                     <div class="col-12 col-md-4 pb-3 pb-md-0">
                         <div class="landing__danger--label h-100 d-flex align-items-center justify-content-center">
-                            <p class="mb-0 pt-2 pb-2 pt-md-0 pb-md-0">
-                                Стоимость 89 000
+                            <p v-html="links[linksActive].info.actionBlock.cost"
+                                    class="mb-0 pt-2 pb-2 pt-md-0 pb-md-0">
+                                Стоимость 89 000 <span class="ruble">q</span>
                             </p>
                         </div>
                     </div>
@@ -284,25 +287,30 @@
                         <a href="#" class="landing__danger--btn btn btn-danger btn-primary--gradient w-100 h-100">Записаться</a>
                     </div>
                     <div class="col-12 col-md-4 pb-3 pb-md-0">
-                        <p class="mb-0 small pl-3 text-center text-md-left">
+                        <p v-html="links[linksActive].info.actionBlock.smallDesc"
+                                class="mb-0 small pl-3 text-center text-md-left text-md-nowrap">
                             Возможна рассрочка <br>
                             Инструменты предоставляются
                         </p>
                     </div>
                 </div>
-                <div class="row pl-lg-5 pr-lg-5 pt-3">
+                <div v-if="links[linksActive].info.actionBlock.desc !== ''"
+                     class="row pl-lg-5 pr-lg-5 pt-4 pt-md-5">
                     <div class="col-12 col-sm-auto d-flex justify-content-center">
                         <div class="images-contain" style="height: 6rem; width: 6rem; background-image: url(/images/lending/icon-gift.svg);"></div>
                     </div>
                     <div class="col-12 col-sm text-center text-sm-left pt-3 pt-sm-0">
                         <p class="h5">В подарок!</p>
-                        <p>Двухдневный тренинг Дмитрия Вашешникова «Клиентовладелец» — <br class="d-none d-lg-block">
-                            тренинг о том, как правильно общаться с клиентом в салоне <br class="d-none d-lg-block">
-                            от приветствия до оглашения цены на услуги.
+                        <p v-html="links[linksActive].info.actionBlock.desc">
+                            Двухдневный тренинг Дмитрия Вашешникова «Ябренд». <br class="d-none d-lg-block">
+                            Ябренд — тренинг о том, как правильно выстроить свой имидж <br class="d-none d-lg-block">
+                            в индустрии красоты и найти свою миссию.
                         </p>
                     </div>
                 </div>
             </div>
+            <div v-if="links[linksActive].info.actionBlock.desc === ''"
+                 class="w-100 lending-fix-height-1"></div>
         </div>
 
         <div class="container-fluid pb-5 container-primary">
@@ -604,6 +612,32 @@
     var js_lending__setting = {
         el: '#js-lending',
         data: {
+            images: [
+                {
+                    img: '/images/lending/demophoto/1-min.jpg',
+                    minImg: '/images/lending/demophoto/min/1-min.jpg'
+                },
+                {
+                    img: '/images/lending/demophoto/2-min.jpg',
+                    minImg: '/images/lending/demophoto/min/2-min.jpg'
+                },
+                {
+                    img: '/images/lending/demophoto/3-min.jpg',
+                    minImg: '/images/lending/demophoto/min/3-min.jpg'
+                },
+                {
+                    img: '/images/lending/demophoto/4-min.jpg',
+                    minImg: '/images/lending/demophoto/min/4-min.jpg'
+                },
+                {
+                    img: '/images/lending/demophoto/5-min.jpg',
+                    minImg: '/images/lending/demophoto/min/5-min.jpg'
+                },
+                {
+                    img: '/images/lending/demophoto/6-min.jpg',
+                    minImg: '/images/lending/demophoto/min/6-min.jpg'
+                }
+            ],
             links: [
                 {
                     title: 'Мастер-универсал',
@@ -717,7 +751,18 @@
                                 desc: 'тренер по мужской <br class="d-none d-md-block">' +
                                 'стрижке'
                             }
-                        ]
+                        ],
+                        actionBlock: {
+                            cost: 'Стоимость 144 200 <span class="ruble">q</span>',
+                            smallDesc: 'Возможна рассрочка <br>\n' +
+                            'Инструменты предоставляются',
+                            desc: 'Двухдневные тренинги Дмитрия Вашешникова: <br class="d-none d-lg-block">\n' +
+                            '«Ябренд» — тренинг о том, как правильно выстроить свой имидж <br class="d-none d-lg-block">\n' +
+                            'в индустрии красоты и найти свою миссию. <br class="d-none d-lg-block">\n' +
+                            '<br>\n' +
+                            '«Клиентовладелец» — тренинг о том, как правильно общаться с клиентом <br class="d-none d-lg-block">\n' +
+                            'в салоне от приветствия до оглашения цены на услуги.'
+                        }
                     }
                 },
                 {
@@ -790,36 +835,44 @@
                             {
                                 img: '/images/pages/about-school/girl3.png',
                                 link: 'http://demetrius.ru/trainers/2032',
-                                name: 'АЛЕНА\n' +
+                                name: 'АЛЕНА <br class="d-none d-md-block">' +
                                 'МАКОТЕРСКАЯ',
-                                desc: 'тренер по женской\n' +
+                                desc: 'тренер по женской <br class="d-none d-md-block">' +
                                 'стрижке'
                             },
                             {
                                 img: '/images/pages/about-school/girl2.png',
                                 link: 'http://demetrius.ru/trainers/2031',
-                                name: 'АННА\n' +
+                                name: 'АННА <br class="d-none d-md-block">' +
                                 'ТЕМИР',
-                                desc: 'тренер\n' +
+                                desc: 'тренер <br class="d-none d-md-block">' +
                                 'по колористике'
                             },
                             {
                                 img: '/images/pages/about-school/girl3.png',
                                 link: 'http://demetrius.ru/trainers/70',
-                                name: 'ВАЛЕРИЯ\n' +
+                                name: 'ВАЛЕРИЯ <br class="d-none d-md-block">' +
                                 'ЗАЙЦЕВА',
-                                desc: 'тренер\n' +
+                                desc: 'тренер <br class="d-none d-md-block">' +
                                 'по колористике'
                             },
                             {
                                 img: '/images/pages/about-school/olga-minina.png',
                                 link: 'http://demetrius.ru/trainers/2026',
-                                name: 'ОЛЬГА\n' +
+                                name: 'ОЛЬГА <br class="d-none d-md-block">' +
                                 'МИНИНА',
-                                desc: 'тренер по жен ской\n' +
+                                desc: 'тренер по жен ской <br class="d-none d-md-block">' +
                                 'стрижке'
                             }
-                        ]
+                        ],
+                        actionBlock: {
+                            cost: 'Стоимость 89 000 <span class="ruble">q</span>',
+                            smallDesc: 'Возможна рассрочка <br>\n' +
+                            'Инструменты предоставляются',
+                            desc: 'Двухдневный тренинг Дмитрия Вашешникова «Клиентовладелец» — <br class="d-none d-lg-block">\n' +
+                            ' тренинг о том, как правильно общаться с клиентом в салоне <br class="d-none d-lg-block">\n' +
+                            ' от приветствия до оглашения цены на услуги.'
+                        }
 
                     }
                 },
@@ -894,12 +947,20 @@
                             {
                                 img: '/images/pages/about-school/girl3.png',
                                 link: 'http://demetrius.ru/trainers/2023',
-                                name: 'ДИАНА\n' +
+                                name: 'ДИАНА <br class="d-none d-md-block">' +
                                 'БОЛДЫРЕВА',
-                                desc: 'тренер по мужской\n' +
+                                desc: 'тренер по мужской <br class="d-none d-md-block">' +
                                 'стрижке'
                             }
-                        ]
+                        ],
+                        actionBlock: {
+                            cost: 'Стоимость 59 800 <span class="ruble">q</span>',
+                            smallDesc: 'Можно пройти тренинг в рассрочку <br class="d-none d-md-block">' +
+                            'Инструменты предоставляются',
+                            desc: 'Двухдневный тренинг Дмитрия Вашешникова «Ябренд». <br class="d-none d-lg-block">\n' +
+                            'Ябренд — тренинг о том, как правильно выстроить свой имидж <br class="d-none d-lg-block">\n' +
+                            'в индустрии красоты и найти свою миссию.'
+                        }
                     }
                 },
                 {
@@ -970,12 +1031,18 @@
                             {
                                 img: '/images/pages/about-school/girl2.png',
                                 link: 'http://demetrius.ru/trainers/2031',
-                                name: 'АННА\n' +
+                                name: 'АННА <br class="d-none d-md-block">' +
                                 'ТЕМИР',
-                                desc: 'тренер\n' +
+                                desc: 'тренер <br class="d-none d-md-block">' +
                                 'по колористике'
                             }
-                        ]
+                        ],
+                        actionBlock: {
+                            cost: 'Стоимость 20 000 <span class="ruble">q</span>',
+                            smallDesc: 'Можно пройти тренинг в рассрочку <br class="d-none d-md-block">' +
+                            'Инструменты предоставляются',
+                            desc: ''
+                        }
 
                     }
                 }
