@@ -971,7 +971,20 @@ select.form-control {
       top: 8%;
       width: 4px;
       height: 85%;
+    }
+    &--red:before{
       background: #cc0000;
+    }
+    &--black:before{
+      background: #000000;
+    }
+    &--rainbow:before{
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6bc5d0+0,5cb23a+33,efc131+67,e9493f+100 */
+      background: #6bc5d0; /* Old browsers */
+      background: -moz-linear-gradient(top, #6bc5d0 0%, #5cb23a 33%, #efc131 67%, #e9493f 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #6bc5d0 0%,#5cb23a 33%,#efc131 67%,#e9493f 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #6bc5d0 0%,#5cb23a 33%,#efc131 67%,#e9493f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bc5d0', endColorstr='#e9493f',GradientType=0 ); /* IE6-9 */
     }
   }
   &__big-number{
@@ -989,6 +1002,17 @@ select.form-control {
     @media (min-width: 1440px) {
       height: 34rem;
     }
+  }
+  &__trainer-box{
+    position: relative;
+    margin-top: 15rem;
+  }
+  &__trainer{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 14rem;
   }
 }
 .btn-primary--gradient-lite{

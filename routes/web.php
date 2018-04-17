@@ -18,7 +18,7 @@ setlocale(LC_ALL, 'ru_RU.utf8');
 Auth::routes();
 Route::get('/', 'PagesController@index')->name('index');
 
-Route::view('/learning-from-scratch', 'lendings.learning-from-scratch');
+Route::view('/learning-from-scratch', 'lendings.learningFromScratch');
 
 Route::get('getCalendarEvent', 'ExempleJsonResponse@getEvent');
 Route::get('getCalendarNav', 'ExempleJsonResponse@getNav');

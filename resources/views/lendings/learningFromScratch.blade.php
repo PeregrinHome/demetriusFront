@@ -23,6 +23,9 @@
         </style>
     </noscript>
     <style>
+        *{
+            font-family: 'PT Sans', 'Oswald', sans-serif;
+        }
         .ekko-lightbox .modal-body{
             padding: 0;
         }
@@ -62,7 +65,7 @@
            class="landing-red-link text-decoration-none">
             <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                    <div class="images-contain m-1"
+                    <div class="images-contain m-1 mr-2"
                          style="height: 2rem; width: 2rem; background-image: url(/images/lending/icon-pdf.svg);"></div>
                 </div>
                 <div class="col-auto">
@@ -116,24 +119,26 @@
 
     <section class="pt-5 pb-5">
 
-        <div class="container-primary pb-5 pl-3 pr-3 pl-md-0 pr-md-0">
+        <div class="container-primary pb-4 pl-3 pr-3 pl-md-0 pr-md-0">
             <div class="row no-gutters">
                 <div class="col-12 col-md-5 mb-5">
                     <div id="js-scroll" class="t__box-overflow-landing" data-simplebar data-simplebar-auto-hide="false">
                         <div class="pl-4 pr-2">
-                            <div class="pl-4 mb-3 t__box-line-left t__box-line-left-fix">
-                                <p class="h2">ЖЕНСКИЙ МАСТЕР</p>
-                                <p class="mb-0">Женские стрижки, колористка, укладки, <br class="d-none d-md-block">
+                            <div :class="links[linksActive].info.doubleBlock.classColor"
+                                    class="pl-4 mb-3 t__box-line-left t__box-line-left-fix" >
+                                <p class="h2 text-uppercase" v-html="links[linksActive].info.doubleBlock.title"></p>
+                                <p class="mb-0" v-html="links[linksActive].info.doubleBlock.desc">Женские стрижки, колористка, укладки, <br class="d-none d-md-block">
                                     трихология и массаж</p>
                             </div>
-                            <div class="pl-4">
+                            <div class="pl-4" v-html="links[linksActive].info.doubleBlock.content">
                                 <p>
-                                    Интенсивный тренинг подойдет для тех, <br class="d-none d-md-block">
-                                    кто уже работает в салоне красоты <br class="d-none d-md-block">
-                                    или только желает стать парикмахером. <br class="d-none d-md-block">
+                                    Интенсивный курс подойдет для тех, <br class="d-none d-md-block">
+                                    кто ни разу делал окрашивание, <br class="d-none d-md-block">
+                                    а также для тех, работает в салоне, <br class="d-none d-md-block">
+                                    но ему не хватает практики и опыта
                                 </p>
                                 <div class="d-flex mb-3 small t__text-red align-items-center">
-                                    <div class="t__big-number">21</div>
+                                    <div class="t__big-number">4</div>
                                     <div>
                                         день интенсивного практического <br class="d-none d-md-block">
                                         обучения с максимальным <br class="d-none d-md-block">
@@ -148,17 +153,14 @@
                                     </div>
                                 </div>
                                 <div class="d-flex mb-3 small t__text-red align-items-center">
-                                    <div class="t__big-number">2</div>
+                                    <div class="t__big-number">1-2</div>
                                     <div>
                                         модели в день <br class="d-none d-md-block">
                                         минимум
                                     </div>
                                 </div>
                                 <p>
-                                    Практика с первого дня обучения. За время
-                                    обучения каждый ученик отрабатывает
-                                    минимум 45 стрижек и окрашиваний
-                                    на моделях.
+                                    Практика с первого дня обучения.
                                 </p>
                                 <p>
                                     Работа в уникальной технике, с помощью
@@ -186,20 +188,53 @@
                 </div>
                 <div class="col-12 col-md-7 mb-5">
                     <div class="pl-md-2">
-                        <a href="/images/lending/s_nulya_na_sayt/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg"
+                        <a :href="links[linksActive].info.doubleBlock.photo"
                            data-toggle="lightbox" data-gallery="gallery-01" data-type="image"
                            target="_blank" class="text-decoration-none">
                             <div class="embed-responsive embed-responsive-16by9">
                                 <div class="embed-responsive-item">
-                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg);"></div>
+                                    <div class="images-cover w-100 h-100" :style="'background-image: url('+links[linksActive].info.doubleBlock.minPhoto+');'"></div>
                                 </div>
                             </div>
                         </a>
-                        <p class="mt-3">
+                        <p class="mt-3" v-html="links[linksActive].info.doubleBlock.descPhoto">
                             Так проходит обучение женским стрижкам
                         </p>
+                        <a href="{{route('photoGallery')}}" target="_blank" class="landing-red-link text-decoration-none">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="images-contain m-1 mr-2" style="height: 2rem; width: 2rem; background-image: url(/images/lending/photo.svg);"></div>
+                                </div>
+                                <div class="col-auto">
+                                    <span class="mb-0 d-block border-bottom-dashed color-red">Все фото процесса</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container-primary pb-5">
+            <div class="d-flex no-gutters justify-content-around flex-wrap">
+
+                <div v-for="item in links[linksActive].info.trainerBlock"
+                     class="col-12 col-sm-6 col-md-4 col-lg-auto pb-3 text-center t__trainer-box" style="max-width: 100%!important; flex-grow: 1;">
+                    <div class="images-contain t__trainer" :style="'background-image: url('+item.img+'); background-position: bottom center;'"></div>
+                    <div class="pt-4 pb-4 main-bg-color-red h-100 pl-3 pr-3">
+                        <a :href="item.link" class="text-decoration-none d-flex flex-column h-100">
+                            <p v-html="item.name" class="text-uppercase mb-0 text-white h3 font-weight-light">
+                                ВАЛЕРИЯ
+                                ЗАЙЦЕВА
+                            </p>
+                            <p v-html="item.desc" class="text-white mb-0 mt-auto">
+                                тренер
+                                по колористике
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -213,85 +248,12 @@
 
                 <div class="col-6 col-md-4">
                     <div class="p-3">
-                        <a href="/images/lending/s_nulya_na_sayt/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg"
+                        <a href="/images/lending/s_nulya_na_sayt/27.jpg"
                            data-toggle="lightbox" data-gallery="gallery-01" data-type="image"
                            target="_blank" class="text-decoration-none">
                             <div class="embed-responsive embed-responsive-1by1">
                                 <div class="embed-responsive-item">
-                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg);"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="p-3">
-                        <a href="/images/lending/s_nulya_na_sayt/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg"
-                           data-toggle="lightbox" data-gallery="gallery-01" data-type="image"
-                           target="_blank" class="text-decoration-none">
-                            <div class="embed-responsive embed-responsive-1by1">
-                                <div class="embed-responsive-item">
-                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg);"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="p-3">
-                        <a href="/images/lending/s_nulya_na_sayt/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg"
-                           data-toggle="lightbox" data-gallery="gallery-01" data-type="image"
-                           target="_blank" class="text-decoration-none">
-                            <div class="embed-responsive embed-responsive-1by1">
-                                <div class="embed-responsive-item">
-                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg);"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="p-3">
-                        <a href="/images/lending/s_nulya_na_sayt/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg"
-                           data-toggle="lightbox" data-gallery="gallery-01" data-type="image"
-                           target="_blank" class="text-decoration-none">
-                            <div class="embed-responsive embed-responsive-1by1">
-                                <div class="embed-responsive-item">
-                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg);"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="p-3">
-                        <a href="/images/lending/s_nulya_na_sayt/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg"
-                           target="_blank" class="text-decoration-none"
-                           data-toggle="lightbox" data-gallery="gallery-01" data-type="image"
-                        >
-                            <div class="embed-responsive embed-responsive-1by1"
-
-                            >
-                                <div class="embed-responsive-item">
-                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg);"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4">
-                    <div class="p-3">
-                        <a href="/images/lending/s_nulya_na_sayt/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg"
-                           data-toggle="lightbox" data-gallery="gallery-01" data-type="image"
-                           target="_blank" class="text-decoration-none">
-                            <div class="embed-responsive embed-responsive-1by1">
-                                <div class="embed-responsive-item">
-                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/parikmaher_s_nulya,_zhenskiy_master,_muzhskoy_master,_kolorist,_barber_-27.jpg);"></div>
+                                    <div class="images-cover w-100 h-100" style="background-image: url(/images/lending/s_nulya_na_sayt/min/27.jpg);"></div>
                                 </div>
                             </div>
                         </a>
@@ -636,6 +598,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
 <script>
     new SimpleBar(document.getElementById('js-scroll'));
     var js_lending__setting = {
@@ -644,19 +607,377 @@
             links: [
                 {
                     title: 'Мастер-универсал',
-                    class: {active: false}
+                    class: {active: false},
+                    info: {
+                        doubleBlock: {
+                            title: 'Мастер-универсал',
+                            desc: 'Женские, мужские стрижки, женская и мужская <br class="d-none d-md-block">' +
+                            'колористика, укладки, трихология и массаж',
+                            classColor: 't__box-line-left--red',
+                            photo: '/images/lending/doubleBox/8wHlbmMETuw.jpg',
+                            minPhoto: '/images/lending/doubleBox/min/8wHlbmMETuw.jpg',
+                            descPhoto: 'Так проходит обучение стрижкам',
+                            content: '<p>\n' +
+                            '    Интенсивный тренинг подойдет для тех, <br class="d-none d-md-block">\n' +
+                            '    кто уже работает в салоне красоты <br class="d-none d-md-block">\n' +
+                            '    или только желает стать парикмахером. <br class="d-none d-md-block">\n' +
+                            '</p>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">33</div>\n' +
+                            '    <div>\n' +
+                            '        день интенсивного практического <br class="d-none d-md-block">\n' +
+                            '        обучения с максимальным <br class="d-none d-md-block">\n' +
+                            '        погружением в профессию\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">8</div>\n' +
+                            '    <div>\n' +
+                            '        часов в день и более <br class="d-none d-md-block">\n' +
+                            '        под контролем лучших тренеров\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">2</div>\n' +
+                            '    <div>\n' +
+                            '        модели в день <br class="d-none d-md-block">\n' +
+                            '        минимум\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<p>\n' +
+                            '    Практика с первого дня обучения. За время\n' +
+                            '    обучения каждый ученик отрабатывает\n' +
+                            '    минимум 65 стрижек и окрашиваний\n' +
+                            '    на моделях.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Работа в уникальной технике, с помощью\n' +
+                            '    которой вы сможете воспроизвести\n' +
+                            '    любую стрижку, любой сложности.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Малые группы до 7 человек.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    На время обучения предоставляем\n' +
+                            '    инструменты настоящего салонного мастера.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Интенсивное обучение, позволяющее\n' +
+                            '    максимально погрузиться в профессию\n' +
+                            '    (обучение проходит весь день)\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Портфолио. Ваши работы снимает\n' +
+                            '    профессиональный фотограф.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Иногородним ученикам предоставляем\n' +
+                            '    жилье по минимальной цене.\n' +
+                            '</p>'
+                        },
+                        trainerBlock: [
+                            {
+                                img: '/images/pages/about-school/girl3.png',
+                                link: 'http://demetrius.ru/trainers/2032',
+                                name: 'АЛЕНА <br class="d-none d-md-block">' +
+                                'МАКОТЕРСКАЯ',
+                                desc: 'тренер по женской <br class="d-none d-md-block">' +
+                                'стрижке'
+                            },
+                            {
+                                img: '/images/pages/about-school/girl2.png',
+                                link: 'http://demetrius.ru/trainers/2031',
+                                name: 'АННА <br class="d-none d-md-block">' +
+                                'ТЕМИР',
+                                desc: 'тренер <br class="d-none d-md-block">' +
+                                'по колористике'
+                            },
+                            {
+                                img: '/images/pages/about-school/girl3.png',
+                                link: 'http://demetrius.ru/trainers/70',
+                                name: 'ВАЛЕРИЯ <br class="d-none d-md-block">' +
+                                'ЗАЙЦЕВА',
+                                desc: 'тренер <br class="d-none d-md-block">' +
+                                'по колористике'
+                            },
+                            {
+                                img: '/images/pages/about-school/olga-minina.png',
+                                link: 'http://demetrius.ru/trainers/2026',
+                                name: 'ОЛЬГА <br class="d-none d-md-block">' +
+                                'МИНИНА',
+                                desc: 'тренер по жен ской <br class="d-none d-md-block">' +
+                                'стрижке'
+                            },
+                            {
+                                img: '/images/pages/about-school/girl3.png',
+                                link: 'http://demetrius.ru/trainers/2023',
+                                name: 'ДИАНА <br class="d-none d-md-block">' +
+                                'БОЛДЫРЕВА',
+                                desc: 'тренер по мужской <br class="d-none d-md-block">' +
+                                'стрижке'
+                            }
+                        ]
+                    }
                 },
                 {
                     title: 'Женский мастер',
-                    class: {active: true}
+                    class: {active: true},
+                    info: {
+                        doubleBlock: {
+                            title: 'Женский мастер',
+                            desc: 'Женские стрижки, колористка, укладки, <br class="d-none d-md-block">' +
+                            'трихология и массаж',
+                            classColor: 't__box-line-left--red',
+                            photo: '/images/lending/doubleBox/7ydLliWUSWg.jpg',
+                            minPhoto: '/images/lending/doubleBox/min/7ydLliWUSWg.jpg',
+                            descPhoto: 'Так проходит обучение женским стрижкам',
+                            content: '<p>\n' +
+                            'Интенсивный тренинг подойдет для тех, <br class="d-none d-md-block">\n' +
+                            'кто уже работает в салоне красоты <br class="d-none d-md-block">\n' +
+                            'или только желает стать парикмахером. <br class="d-none d-md-block">\n' +
+                            '</p>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '<div class="t__big-number">21</div>\n' +
+                            '<div>\n' +
+                            '    день интенсивного практического <br class="d-none d-md-block">\n' +
+                            '    обучения с максимальным <br class="d-none d-md-block">\n' +
+                            '    погружением в профессию\n' +
+                            '</div>\n' +
+                            '</div>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '<div class="t__big-number">8</div>\n' +
+                            '<div>\n' +
+                            '    часов в день и более <br class="d-none d-md-block">\n' +
+                            '    под контролем лучших тренеров\n' +
+                            '</div>\n' +
+                            '</div>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '<div class="t__big-number">2</div>\n' +
+                            '<div>\n' +
+                            '    модели в день <br class="d-none d-md-block">\n' +
+                            '    минимум\n' +
+                            '</div>\n' +
+                            '</div>\n' +
+                            '<p>\n' +
+                            'Практика с первого дня обучения. За время\n' +
+                            'обучения каждый ученик отрабатывает\n' +
+                            'минимум 45 стрижек и окрашиваний\n' +
+                            'на моделях.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            'Работа в уникальной технике, с помощью\n' +
+                            'которой вы сможете воспроизвести\n' +
+                            'любую стрижку, любой сложности.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            'Малые группы до 7 человек.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            'На время обучения предоставляем\n' +
+                            'инструменты настоящего салонного мастера.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            'Портфолио. Ваши работы снимает\n' +
+                            'профессиональный фотограф.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            'Иногородним ученикам предоставляем\n' +
+                            'жилье по минимальной цене.\n' +
+                            '</p>'
+                        },
+                        trainerBlock: [
+                            {
+                                img: '/images/pages/about-school/girl3.png',
+                                link: 'http://demetrius.ru/trainers/2032',
+                                name: 'АЛЕНА\n' +
+                                'МАКОТЕРСКАЯ',
+                                desc: 'тренер по женской\n' +
+                                'стрижке'
+                            },
+                            {
+                                img: '/images/pages/about-school/girl2.png',
+                                link: 'http://demetrius.ru/trainers/2031',
+                                name: 'АННА\n' +
+                                'ТЕМИР',
+                                desc: 'тренер\n' +
+                                'по колористике'
+                            },
+                            {
+                                img: '/images/pages/about-school/girl3.png',
+                                link: 'http://demetrius.ru/trainers/70',
+                                name: 'ВАЛЕРИЯ\n' +
+                                'ЗАЙЦЕВА',
+                                desc: 'тренер\n' +
+                                'по колористике'
+                            },
+                            {
+                                img: '/images/pages/about-school/olga-minina.png',
+                                link: 'http://demetrius.ru/trainers/2026',
+                                name: 'ОЛЬГА\n' +
+                                'МИНИНА',
+                                desc: 'тренер по жен ской\n' +
+                                'стрижке'
+                            }
+                        ]
+
+                    }
                 },
                 {
                     title: 'Мужской мастер',
-                    class: {active: false}
+                    class: {active: false},
+                    info: {
+                        doubleBlock: {
+                            title: 'Мужской мастер',
+                            desc: 'Мужские стрижки, мужская колористика, <br class="d-none d-md-block">' +
+                            'трихология и массаж',
+                            classColor: 't__box-line-left--black',
+                            photo: '/images/lending/doubleBox/gNiTTFapCBY.jpg',
+                            minPhoto: '/images/lending/doubleBox/min/gNiTTFapCBY.jpg',
+                            descPhoto: 'Так проходит обучение мужским стрижкам',
+                            content: '<p>\n' +
+                            '    Интенсивный курс подойдет для тех, <br class="d-none d-md-block">\n' +
+                            '    кто ни разу не держал парикмахерские <br class="d-none d-md-block">\n' +
+                            '    ножницы в руках, а также для тех, работает <br class="d-none d-md-block">\n' +
+                            '    в салоне, но ему не хватает практики и опыта\n' +
+                            '</p>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">13</div>\n' +
+                            '    <div>\n' +
+                            '        день интенсивного практического <br class="d-none d-md-block">\n' +
+                            '        обучения с максимальным <br class="d-none d-md-block">\n' +
+                            '        погружением в профессию\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">8</div>\n' +
+                            '    <div>\n' +
+                            '        часов в день и более <br class="d-none d-md-block">\n' +
+                            '        под контролем лучших тренеров\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">2</div>\n' +
+                            '    <div>\n' +
+                            '        модели в день <br class="d-none d-md-block">\n' +
+                            '        минимум\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<p>\n' +
+                            '    Практика с первого дня обучения. За время\n' +
+                            '    обучения каждый ученик отрабатывает\n' +
+                            '    минимум 35 стрижек и окрашиваний\n' +
+                            '    на моделях.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Работа в уникальной технике, с помощью\n' +
+                            '    которой вы сможете воспроизвести\n' +
+                            '    любую стрижку, любой сложности.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Малые группы до 7 человек.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    На время обучения предоставляем\n' +
+                            '    инструменты настоящего салонного мастера.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Портфолио. Ваши работы снимает\n' +
+                            '    профессиональный фотограф.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Иногородним ученикам предоставляем\n' +
+                            '    жилье по минимальной цене.\n' +
+                            '</p>'
+                        },
+                        trainerBlock: [
+                            {
+                                img: '/images/pages/about-school/girl3.png',
+                                link: 'http://demetrius.ru/trainers/2023',
+                                name: 'ДИАНА\n' +
+                                'БОЛДЫРЕВА',
+                                desc: 'тренер по мужской\n' +
+                                'стрижке'
+                            }
+                        ]
+                    }
                 },
                 {
                     title: 'Колорист. Шаг 1',
-                    class: {active: false}
+                    class: {active: false},
+                    info: {
+                        doubleBlock: {
+                            title: 'Колорист. Шаг 1',
+                            desc: 'Окрашивание в 1 тон, тонирование, <br class="d-none d-md-block">' +
+                            'седина, блонды.',
+                            classColor: 't__box-line-left--rainbow',
+                            photo: '/images/lending/doubleBox/Bw2U5PX9-tc.jpg',
+                            minPhoto: '/images/lending/doubleBox/min/Bw2U5PX9-tc.jpg',
+                            descPhoto: 'Так проходит обучение колористике',
+                            content: '<p>\n' +
+                            '    Интенсивный курс подойдет для тех, <br class="d-none d-md-block">\n' +
+                            '    кто ни разу делал окрашивание, <br class="d-none d-md-block">\n' +
+                            '    а также для тех, работает в салоне, <br class="d-none d-md-block">\n' +
+                            '    но ему не хватает практики и опыта\n' +
+                            '</p>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">4</div>\n' +
+                            '    <div>\n' +
+                            '        день интенсивного практического <br class="d-none d-md-block">\n' +
+                            '        обучения с максимальным <br class="d-none d-md-block">\n' +
+                            '        погружением в профессию\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">8</div>\n' +
+                            '    <div>\n' +
+                            '        часов в день и более <br class="d-none d-md-block">\n' +
+                            '        под контролем лучших тренеров\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<div class="d-flex mb-3 small t__text-red align-items-center">\n' +
+                            '    <div class="t__big-number">1-2</div>\n' +
+                            '    <div>\n' +
+                            '        модели в день <br class="d-none d-md-block">\n' +
+                            '        минимум\n' +
+                            '    </div>\n' +
+                            '</div>\n' +
+                            '<p>\n' +
+                            '    Практика с первого дня обучения.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Работа в уникальной технике, с помощью\n' +
+                            '    которой вы сможете воспроизвести\n' +
+                            '    любую стрижку, любой сложности.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Малые группы до 7 человек.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    На время обучения предоставляем\n' +
+                            '    инструменты настоящего салонного мастера.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Портфолио. Ваши работы снимает\n' +
+                            '    профессиональный фотограф.\n' +
+                            '</p>\n' +
+                            '<p>\n' +
+                            '    Иногородним ученикам предоставляем\n' +
+                            '    жилье по минимальной цене.\n' +
+                            '</p>'
+                        },
+                        trainerBlock: [
+                            {
+                                img: '/images/pages/about-school/girl2.png',
+                                link: 'http://demetrius.ru/trainers/2031',
+                                name: 'АННА\n' +
+                                'ТЕМИР',
+                                desc: 'тренер\n' +
+                                'по колористике'
+                            }
+                        ]
+
+                    }
                 }
             ],
             linksActive: 1,
